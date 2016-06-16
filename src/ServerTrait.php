@@ -1,0 +1,38 @@
+<?php
+/**
+ * This file is part of the "Easy System" package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author Damon Smith <damon.easy.system@gmail.com>
+ */
+namespace Es\Server;
+
+use Es\Services\Provider;
+
+/**
+ * The accessors of Server.
+ */
+trait ServerTrait
+{
+    /**
+     * Sets the server.
+     *
+     * @param ServerInterface $server The server
+     */
+    public function setServer(ServerInterface $server)
+    {
+        Provider::getServices()->set('Server', $server);
+    }
+
+    /**
+     * Gets the server.
+     *
+     * @return ServerInterface The server
+     */
+    public function getServer()
+    {
+        return Provider::getServices()->get('Server');
+    }
+}
